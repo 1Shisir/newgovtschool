@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@theme {
+  --font-serif: "Libre Baskerville", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-school-primary: #1e3a8a; /* Deep Blue */
+  --color-school-secondary: #fdfbf7; /* Off-white / light beige */
+  --color-school-accent: #b45309; /* Darker Amber for better contrast */
+  --color-school-text: #1f2937;
+  --color-school-muted: #6b7280;
+}
+
+@layer base {
+  body {
+    @apply bg-school-secondary text-school-text font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, .serif {
+    @apply font-serif;
+  }
+}
+
+/* Custom scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-school-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Subtle texture overlay for a "human" feel */
+.bg-texture {
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+}
+
+/* Masonry grid helper */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 10px;
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  }
+}
